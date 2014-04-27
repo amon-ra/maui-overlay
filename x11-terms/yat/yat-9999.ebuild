@@ -17,7 +17,7 @@ IUSE="debug"
 
 src_configure() {
 	   if [[ -x ${ECONF_SOURCE:-.}/configure ]] ; then
-	   econf
+	   ./configure
    fi
 	   eqmake5
 
