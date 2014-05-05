@@ -22,3 +22,7 @@ src_configure() {
 	   eqmake5
 
 }
+
+src_install() {
+           mkdir ${D}/usr/share/qt5
+}
