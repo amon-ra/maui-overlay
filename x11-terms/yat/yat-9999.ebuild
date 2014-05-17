@@ -24,5 +24,5 @@ src_configure() {
 }
 
 src_install() {
-           dodir /usr/share/qt5
+           dodir qt5
 }
