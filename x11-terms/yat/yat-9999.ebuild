@@ -25,5 +25,5 @@ src_configure() {
 
 src_install() {
            dodir qt5
-           emake DESTDIR="${D}"
+           emake DESTDIR=${D} install
 }
