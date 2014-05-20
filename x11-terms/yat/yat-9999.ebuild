@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 qmake-utils
+inherit git-2 qt4-r2
 
 DESRIPTION="Terminal emulator in C++ and qml"
 HOMEPAGE="https://guthub.com/jorgen/yat"
@@ -25,5 +25,5 @@ src_configure() {
 
 src_install() {
            dodir qt5
-           emake DESTDIR="${D}" install
+           qt4-r2_src_install
 }
