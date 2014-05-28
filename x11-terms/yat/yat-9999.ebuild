@@ -25,5 +25,4 @@ src_configure() {
 
 src_install() {
            dodir qt5
-           qt4-r2_src_install
 }
