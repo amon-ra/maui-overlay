@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 qt4-r2
+inherit qt4-r2 git-2
 
 DESRIPTION="Terminal emulator in C++ and qml"
 HOMEPAGE="https://guthub.com/jorgen/yat"
