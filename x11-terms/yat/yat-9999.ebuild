@@ -4,25 +4,26 @@
 
 EAPI=4
 
-inherit qt4-r2 git-2
+inherit qmake-utils git-2
 
 DESRIPTION="Terminal emulator in C++ and qml"
-HOMEPAGE="https://guthub.com/jorgen/yat"
+HOMEPAGE="https://github.com/jorgen/yat"
 
 EGIT_REPO_URI="https://github.com/jorgen/yat.git"
-
+SRC_URI=""
 SLOT="0"
 KEYWORDS="~x86"
 IUSE="debug"
 
 src_configure() {
-	   if [[ -x ${ECONF_SOURCE:-.}/configure ]] ; then
-	   ./configure
-   fi
-	   eqmake5
-
+        local project_file=$(qmake-utils_find_pro_file)
+        if [[ -n ${project_file} ]]; then
+                eqmake5 "${project_file}"
+        else
+                default
+        fi
 }
 
 src_install() {
-           dodir qt5
+        emake INSTALL_DIR="${D}" install
 }
