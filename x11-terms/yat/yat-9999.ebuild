@@ -16,14 +16,14 @@ KEYWORDS="~x86"
 IUSE="debug"
 
 src_configure() {
-        local project_file=$(qmake-utils_find_pro_file)
-        if [[ -n ${project_file} ]]; then
-                eqmake5 "${project_file}"
-        else
-                default
-        fi
+		local project_file=$(qmake-utils_find_pro_file)
+		if [[ -n ${project_file} ]]; then
+				eqmake5 "${project_file}"
+		else
+				default
+		fi
 }
 
 src_install() {
-        emake INSTALL_DIR="${D}" install
+	einstall DESTDIR="${D}" install
 }
