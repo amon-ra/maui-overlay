@@ -25,6 +25,7 @@ RDEPEND="${DEPEND}"
 DEPEND="
 		dev-qt/qtcore:5
 		dev-qt/qtdeclarative:5
+		dev-qt/qtgui:5
 		dev-libs/extra-cmake-modules"
 
 src_configure() {
