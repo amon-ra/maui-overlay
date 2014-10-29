@@ -13,7 +13,6 @@ if [[ ${PV} = *9999* ]]; then
 		inherit git-2
 		EGIT_REPO_URI="git://github.com/mauios/libhawaii.git"
 		EGIT_BRANCH="dev"
-		KEYWORDS=""
 else
 		SRC_URI=""
 		KEYWORDS="~x86"
@@ -22,7 +21,12 @@ fi
 SLOT="0"
 IUSE="debug"
 
+RDEPEND="${DEPEND}"
 DEPEND="
 		dev-qt/qtcore:5
-		dev-qt/qtdeclarative:5"
-RDEPEND="${DEPEND}"
+		dev-qt/qtdeclarative:5
+		dev-libs/extra-cmake-modules"
+
+src_configure() {
+	   cmake-utils_src_configure
+}
