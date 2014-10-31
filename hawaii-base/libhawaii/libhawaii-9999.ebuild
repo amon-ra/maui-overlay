@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI="5"
 
 inherit cmake-utils
 
 DESCRIPTION="Library shared among Hawaii Shell and other related applications."
-HOMEPAGE="https://github.com/mauios/libhawaii"
+HOMEPAGE="http://www.maui-project.org"
 
 if [[ ${PV} = *9999* ]]; then
 		inherit git-2
@@ -19,15 +19,12 @@ else
 fi
 
 SLOT="0"
-IUSE="debug"
 
 RDEPEND="${DEPEND}"
+
 DEPEND="
 		dev-qt/qtcore:5
-		dev-qt/qtdeclarative:5
 		dev-qt/qtgui:5
-		dev-libs/extra-cmake-modules"
-
-src_configure() {
-	   cmake-utils_src_configure
-}
+		dev-qt/qtdeclarative:5
+		dev-qt/qtquickcontrols:5"
+#		dev-libs/extra-cmake-modules"
