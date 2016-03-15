@@ -14,7 +14,7 @@ if [[ ${PV} = *9999* ]]; then
 		EGIT_REPO_URI="git://github.com/mauios/libhawaii.git"
 		EGIT_BRANCH="dev"
 else
-		SRC_URI=""
+		SRC_URI="http://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 		KEYWORDS="~x86"
 fi
 
